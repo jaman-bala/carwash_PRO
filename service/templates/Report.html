@@ -4,18 +4,21 @@
 
 {% block content %}
 <div class="container">
-    <h1>Отсчеты</h1>
+    <h1>Отчёт</h1>
     {% for report in reports %}
     <div style="margin-bottom:2rem;" class="card">
         <div class="card-header">
-            Мойщик: {{report.title}}
+            <h5 class="card-title">Мойщик:</h5> {{report.title}}
         </div>
         <div class="card-header">
-            <h6 class="card-title">Модель машины: {{report.model_car}}</h6>
-            <p class="card-text">{{report.number_car}}</p>
+            <h5 class="card-title">Модель машины:</h5> {{report.model_car}}
+            <h5 class="card-title">Номер машины: </h5>{{report.number_car}}
+            <h5 class="card-title">Вид услуги: </h5>{{report.service}}
+            <h5 class="card-text">Сумма: {{report.sum}}</h5>
+            <h7 class="card-text">Дата: {{report.created}}</h7>
         </div>
     </div>
     {% endfor %}
-</div>
+
 {% endblock %}
 

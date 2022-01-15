@@ -12,6 +12,7 @@ def index(request):
 
     return render(request, "index.html", {"form": form})
 
+
 def report(request):
     reports = Post.objects.all()
     context = {'reports': reports}

@@ -5,7 +5,7 @@ from service.models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('model_car', 'number_car', 'service', 'sum', 'title', 'image',)
+        fields = ('model_car', 'number_car', 'service', 'sum', 'title',)
         widgets = {
 
             "model_car": forms.TextInput(
@@ -28,8 +28,5 @@ class PostForm(forms.ModelForm):
                 attrs={"class": "form-control",
                        "placeholder": "Имя автомойщика"
                        }),
-            "image": forms.FileInput(
-                attrs={"class": "form-control",
-                       "placeholder": "Фотография автомобиля"
-                       }),
+
         }
