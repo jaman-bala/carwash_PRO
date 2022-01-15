@@ -7,8 +7,7 @@ class Post(models.Model):
     number_car = models.CharField(max_length=255, verbose_name="Номер машины")
     service = models.CharField(max_length=255, verbose_name="Вид услуги")
     sum = models.CharField(max_length=255, verbose_name="Сумма")
-    image = models.ImageField(upload_to='media', null=True, default='media/car_icon.png')
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = "Данные авто"
@@ -18,3 +17,13 @@ class Post(models.Model):
         return self.title
 
 
+class Icon(models.Model):
+    title = models.CharField(max_length=255, verbose_name="Название")
+    image = models.ImageField(upload_to='media', null=True, default='media/')
+
+    class Meta:
+        verbose_name = "Название"
+        verbose_name_plural = "Иконка"
+
+    def __str__(self):
+        return self.title

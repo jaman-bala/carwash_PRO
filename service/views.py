@@ -17,3 +17,9 @@ def report(request):
     reports = Post.objects.all()
     context = {'reports': reports}
     return render(request, 'Report.html', context)
+
+
+# def icon(request):
+#     icons = Post.objects.all()
+#     context = {'icons': icons}
+#     return render(request, 'base.html', context)
