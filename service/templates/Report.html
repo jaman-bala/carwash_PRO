@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load  static %}
+
+
+{% block content %}
+<div class="container">
+    <h1>Отсчеты</h1>
+    {% for report in reports %}
+    <div style="margin-bottom:2rem;" class="card">
+        <div class="card-header">
+            Мойщик: {{report.title}}
+        </div>
+        <div class="card-header">
+            <h6 class="card-title">Модель машины: {{report.model_car}}</h6>
+            <p class="card-text">{{report.number_car}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
